@@ -7,7 +7,10 @@
 #Plataforma: Python v2.7
 
 def fibnum():
-    n = int(input("Introduzca el numero de numeros de la serie Fibonacci que desea generar: "))
+    n = input("Introduzca el numero de numeros de la serie Fibonacci que desea generar: ")
+    if not n.isnumeric():
+        raise Exception("Favor ingresar solamente numeros")
+    n = int(n)
     a, b = 0, 1
     for i in range(n):
         a, b = b, a + b
